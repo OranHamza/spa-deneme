@@ -26,7 +26,6 @@ async function fetchMenu() {
 // 2. Initialize Interface
 function initInterface() {
     createCategoryButtons();
-    // Show first category by default
     if (menuData.menu && menuData.menu.length > 0) {
         displayCategory(0);
     }
@@ -43,18 +42,14 @@ function createCategoryButtons() {
         btn.classList.add('cat-btn');
         
         btn.addEventListener('click', () => {
-            // Remove active from all
             document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-            // Add to clicked
             btn.classList.add('active');
-            // Show content
             displayCategory(index);
         });
 
         nav.appendChild(btn);
     });
 
-    // Set first one active
     if (nav.firstChild) nav.firstChild.classList.add('active');
 }
 
@@ -63,54 +58,53 @@ function displayCategory(index) {
     const container = document.getElementById('menu-container');
     const category = menuData.menu[index];
     
-    // Reset Container
     container.innerHTML = '';
     container.style.opacity = '0';
 
     setTimeout(() => {
         category.subcategories.forEach(sub => {
-            
-            // Subcategory Header
             const subHeader = document.createElement('h2');
             subHeader.textContent = sub.name;
             subHeader.classList.add('subcategory-header');
             container.appendChild(subHeader);
 
-            // Grid
             const grid = document.createElement('div');
             grid.classList.add('items-grid');
 
-            // Items
             sub.items.forEach(item => {
-                const card = createItemCard(item);
+                // Pass category name to help find better images
+                const card = createItemCard(item, category.category);
                 grid.appendChild(card);
             });
 
             container.appendChild(grid);
         });
 
-        // Fade In
         container.style.opacity = '1';
         container.classList.add('fade-in');
     }, 200);
 }
 
-// 5. Create Individual Card (With AI Image & Accordion)
-function createItemCard(item) {
+// 5. Create Individual Card (With Stable Image Source)
+function createItemCard(item, categoryName) {
     const card = document.createElement('div');
     card.classList.add('menu-card');
 
-    // AI IMAGE GENERATION
-    // We create a prompt based on the item name + "food photorealistic"
-    const prompt = encodeURIComponent(item.name + " delicious food photorealistic high resolution");
-    // Using Pollinations.ai (No API key needed)
-    const imageUrl = `https://image.pollinations.ai/prompt/${prompt}?width=400&height=300&nologo=true&seed=${item.id}`;
+    // IMAGE STRATEGY: STABLE KEYWORD SEARCH
+    // We use the first word of the item (e.g., "Burger") and the category (e.g., "Food")
+    // This uses LoremFlickr which is free and has no strict rate limits like AI.
+    const searchTerms = `${categoryName},${item.name.split(' ')[0]},food`;
+    const imageUrl = `https://loremflickr.com/500/400/${searchTerms}/all`;
 
     const ingredients = item.ingredients.join(', ');
 
     card.innerHTML = `
         <div class="image-container">
-            <img src="${imageUrl}" alt="${item.name}" class="card-image" loading="lazy">
+            <img src="${imageUrl}" 
+                 alt="${item.name}" 
+                 class="card-image" 
+                 loading="lazy"
+                 onerror="this.onerror=null;this.src='https://placehold.co/500x400/EEE/31343C?text=Tasty+Food';">
         </div>
 
         <div class="card-body">
@@ -137,9 +131,7 @@ function createItemCard(item) {
         </div>
     `;
 
-    // ADD CLICK EVENT TO TOGGLE DETAILS
     card.addEventListener('click', () => {
-        // Toggle the 'expanded' class on THIS card
         card.classList.toggle('expanded');
     });
 
