@@ -1,101 +1,163 @@
 :root {
-    --primary-color: #d35400;
-    --secondary-color: #2c3e50;
-    --bg-color: #f4f4f4;
+    --primary-color: #d35400; /* Burnt Orange */
+    --secondary-color: #2c3e50; /* Dark Blue */
+    --accent-color: #f39c12; /* Gold */
+    --bg-color: #f8f9fa;
     --card-bg: #ffffff;
+    --text-dark: #2d3436;
+    --text-light: #636e72;
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Lato', sans-serif;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     font-family: var(--font-body);
     background-color: var(--bg-color);
-    color: #333;
+    color: var(--text-dark);
+    scroll-behavior: smooth;
 }
 
 /* Hero Section */
 .hero {
-    height: 50vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=1200');
-    background-size: cover;
-    background-position: center;
+    height: 60vh;
+    background: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1470&auto=format&fit=crop') no-repeat center center/cover;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
     text-align: center;
+    color: white;
 }
 
-.hero h1 { font-family: var(--font-heading); font-size: 3.5rem; margin-bottom: 10px; }
-.hero p { font-size: 1.2rem; font-style: italic; }
+.overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
 
-/* Sticky Nav */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    padding: 12px 30px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #e67e22;
+}
+
+/* Sticky Navigation */
 nav {
     background: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    padding: 15px 0;
     position: sticky;
     top: 0;
     z-index: 100;
-    padding: 15px;
     display: flex;
     justify-content: center;
-    gap: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     flex-wrap: wrap;
+    gap: 15px;
 }
 
 .cat-btn {
-    border: none;
     background: transparent;
-    padding: 8px 16px;
+    border: 2px solid transparent;
+    padding: 8px 20px;
     font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-light);
     cursor: pointer;
-    color: #666;
     border-radius: 20px;
     transition: all 0.3s;
 }
 
-.cat-btn.active, .cat-btn:hover {
+.cat-btn:hover, .cat-btn.active {
     background-color: var(--primary-color);
     color: white;
 }
 
-/* Menu Layout */
-.container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
-.subcategory-header { margin: 30px 0 15px; color: var(--secondary-color); border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+/* Menu Content */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    min-height: 50vh;
+}
+
+.subcategory-header {
+    font-family: var(--font-heading);
+    color: var(--secondary-color);
+    font-size: 2rem;
+    margin: 40px 0 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
 
 .items-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
 }
 
-/* --- CARD DESIGN (INTERACTIVE) --- */
+/* --- CARD DESIGN & INTERACTIVITY --- */
 .menu-card {
     background: var(--card-bg);
-    border-radius: 12px;
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    cursor: pointer; /* Tıklanabilir olduğunu gösterir */
-    transition: transform 0.2s, box-shadow 0.2s;
-    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+    cursor: pointer;
+    border: 1px solid #eee;
 }
 
 .menu-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-/* Image styling */
+.image-container {
+    height: 200px;
+    overflow: hidden;
+    background-color: #ddd;
+}
+
 .card-image {
     width: 100%;
-    height: 180px;
+    height: 100%;
     object-fit: cover;
 }
 
-/* Card Content */
-.card-body { padding: 15px; }
+.card-body {
+    padding: 20px;
+}
 
 .card-top {
     display: flex;
@@ -104,46 +166,72 @@ nav {
 }
 
 .card-top h3 {
-    font-size: 1.2rem;
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
     color: var(--secondary-color);
 }
 
 .price {
-    background: var(--secondary-color);
-    color: #f39c12;
-    padding: 4px 8px;
-    border-radius: 6px;
+    background-color: var(--secondary-color);
+    color: var(--accent-color);
+    padding: 5px 10px;
+    border-radius: 8px;
     font-weight: bold;
 }
 
-/* --- GİZLİ DETAYLAR (Hidden Details) --- */
-.card-details {
-    max-height: 0; /* Başlangıçta kapalı */
-    overflow: hidden;
-    transition: max-height 0.4s ease-out; /* Açılma animasyonu */
-    background-color: #fafafa;
-}
-
-.details-content {
-    padding: 15px;
-    border-top: 1px solid #eee;
-    font-size: 0.9rem;
-    color: #555;
-}
-
-/* --- AÇIK DURUM (Active State) --- */
-.menu-card.expanded .card-details {
-    max-height: 300px; /* Yeterince büyük bir değer */
-}
-
-/* Tıklayınca beliren ikon */
+/* Expand Icon */
 .expand-icon {
-    text-align: center;
-    color: #ccc;
+    margin-top: 10px;
     font-size: 0.8rem;
-    margin-top: 5px;
+    color: #999;
+    text-align: center;
+    transition: 0.3s;
 }
 
 .menu-card.expanded .expand-icon {
     transform: rotate(180deg);
+}
+
+/* --- HIDDEN DETAILS (Accordion) --- */
+.card-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    background-color: #fdfdfd;
+}
+
+.menu-card.expanded .card-details {
+    max-height: 500px; /* Opens up */
+    border-top: 1px solid #eee;
+}
+
+.details-content {
+    padding: 15px 20px;
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.socials a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.2rem;
+}
+
+/* Loading Animation */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeInUp 0.5s ease-out;
 }
