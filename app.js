@@ -5,48 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
 let menuData = {};
 let currencySymbol = "$";
 
-// --- GÜNCELLENMİŞ VE GENİŞLETİLMİŞ RESİM LİSTESİ ---
-const categoryImages = {
-    // Breakfast (Yeni)
-    "Breakfast & Brunch": "https://images.unsplash.com/photo-1533089862017-5614ec420547?auto=format&fit=crop&w=500&q=80",
-    
-    // Starters
-    "Starters & Soups": "https://images.unsplash.com/photo-1547592166-23acbe346499?auto=format&fit=crop&w=500&q=80", 
-    
-    // Salads
-    "Salads": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=500&q=80",
-    
-    // Asian Fusion (Yeni)
-    "Asian Fusion": "https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=500&q=80",
-
-    // Main Courses
-    "Main Courses": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=500&q=80",
-    
-    // Pasta
-    "Pasta & Risotto": "https://images.unsplash.com/photo-1551183053-bf91b1dca038?auto=format&fit=crop&w=500&q=80",
-    
-    // Pizza
-    "Pizza & Flatbreads": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=500&q=80",
-    
-    // Burgers
-    "Burgers & Handhelds": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80",
-    
-    // Sides (Yeni)
-    "Sides & Extras": "https://images.unsplash.com/photo-1534939561126-855f86654015?auto=format&fit=crop&w=500&q=80",
-
-    // Kids
-    "Kids Menu": "https://images.unsplash.com/photo-1621257620172-8d769824da6e?auto=format&fit=crop&w=500&q=80",
-    
-    // Desserts
-    "Desserts": "https://images.unsplash.com/photo-1563729768640-341d0b933dc0?auto=format&fit=crop&w=500&q=80",
-    
-    // Beverages
-    "Beverages": "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=500&q=80",
-    
-    // Fallback
-    "Default": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=500&q=80"
-};
-
 // 1. Fetch JSON Data
 async function fetchMenu() {
     try {
@@ -114,6 +72,7 @@ function displayCategory(index) {
             grid.classList.add('items-grid');
 
             sub.items.forEach(item => {
+                // Pass category to helper
                 const card = createItemCard(item, category.category);
                 grid.appendChild(card);
             });
@@ -126,12 +85,27 @@ function displayCategory(index) {
     }, 200);
 }
 
-// 5. Create Individual Card (With Stable Fixed Images)
-function createItemCard(item, categoryName) {
+// 5. Create Individual Card (Unique Images Strategy)
+function createItemCard(item, mainCategory) {
     const card = document.createElement('div');
     card.classList.add('menu-card');
 
-    const imageUrl = categoryImages[categoryName] || categoryImages["Default"];
+    // --- SMART IMAGE STRATEGY ---
+    // 1. We extract the numeric part of the ID (e.g., "BG-001" -> 1) to create a unique lock.
+    // 2. We use the first word of the item name + main category for the search term.
+    
+    // Clean unique ID generation from the item.id string
+    const uniqueLock = item.id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+    
+    // Better keywords: Take the first word of the item name (e.g., "Pancake", "Burger")
+    // and replace spaces with commas.
+    const searchKeywords = `${item.name.split(' ')[0]},${mainCategory.split(' ')[0]},food`;
+    
+    // LoremFlickr with ?lock parameter ensures:
+    // a) Different images for different items (due to uniqueLock)
+    // b) Stable images (refreshing page keeps the same image for that item)
+    const imageUrl = `https://loremflickr.com/500/400/${searchKeywords}?lock=${uniqueLock}`;
+
     const ingredients = item.ingredients.join(', ');
 
     card.innerHTML = `
@@ -139,7 +113,8 @@ function createItemCard(item, categoryName) {
             <img src="${imageUrl}" 
                  alt="${item.name}" 
                  class="card-image" 
-                 loading="lazy">
+                 loading="lazy"
+                 onerror="this.onerror=null;this.src='https://placehold.co/500x400/2c3e50/ffffff?text=${item.name.split(' ')[0]}';">
         </div>
 
         <div class="card-body">
