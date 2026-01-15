@@ -4,267 +4,205 @@
     "currency": "USD",
     "menu": [
       {
-        "category": "Starters",
+        "category": "Breakfast & Brunch",
         "subcategories": [
+          {
+            "name": "Morning Classics",
+            "items": [
+              { "id": "BR-001", "name": "Classic Benedict", "description": "Poached eggs on English muffin with hollandaise and turkey ham", "ingredients": ["Eggs", "English Muffin", "Hollandaise", "Turkey Ham"], "price": 14.0, "calories": 550 },
+              { "id": "BR-002", "name": "Fluffy Pancakes", "description": "Stack of three pancakes with maple syrup and fresh berries", "ingredients": ["Flour", "Milk", "Eggs", "Maple Syrup", "Berries"], "price": 12.0, "calories": 600 },
+              { "id": "BR-003", "name": "Avocado Toast", "description": "Sourdough bread topped with smashed avocado and poached egg", "ingredients": ["Sourdough", "Avocado", "Egg", "Chili Flakes"], "price": 13.5, "calories": 380 },
+              { "id": "BR-004", "name": "Full English", "description": "Eggs, beans, sausages, mushrooms, tomatoes and toast", "ingredients": ["Eggs", "Sausage", "Beans", "Mushrooms", "Toast"], "price": 18.0, "calories": 850 }
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Starters & Soups",
+        "subcategories": [
+          {
+            "name": "Soups",
+            "items": [
+              { "id": "SP-001", "name": "Roasted Tomato Basil Soup", "description": "Slow-roasted tomatoes blended with fresh basil and cream", "ingredients": ["Tomatoes", "Basil", "Cream", "Garlic"], "price": 8.0, "calories": 180 },
+              { "id": "SP-002", "name": "French Onion Soup", "description": "Caramelized onions in beef broth topped with melted gruyère", "ingredients": ["Onions", "Beef Broth", "Gruyère Cheese", "Croutons"], "price": 9.5, "calories": 320 }
+            ]
+          },
           {
             "name": "Cold Starters",
             "items": [
-              {
-                "id": "ST-C-001",
-                "name": "Classic Hummus",
-                "description": "Smooth chickpea dip with tahini and olive oil",
-                "ingredients": ["Chickpeas", "Tahini", "Garlic", "Lemon Juice", "Olive Oil"],
-                "price": 7.5,
-                "calories": 240
-              },
-              {
-                "id": "ST-C-002",
-                "name": "Avocado Yogurt Dip",
-                "description": "Creamy yogurt dip blended with ripe avocado",
-                "ingredients": ["Greek Yogurt", "Avocado", "Lime Juice", "Salt"],
-                "price": 8.0,
-                "calories": 260
-              },
-              {
-                "id": "ST-C-003",
-                "name": "Mediterranean Meze Plate",
-                "description": "Assorted cold Mediterranean appetizers",
-                "ingredients": ["Hummus", "Babaganoush", "Olives", "Feta Cheese"],
-                "price": 12.0,
-                "calories": 390
-              }
+              { "id": "ST-C-001", "name": "Classic Hummus", "description": "Smooth chickpea dip with tahini and extra virgin olive oil", "ingredients": ["Chickpeas", "Tahini", "Garlic", "Lemon", "Olive Oil"], "price": 7.5, "calories": 240 },
+              { "id": "ST-C-002", "name": "Beef Carpaccio", "description": "Thinly sliced raw beef with parmesan and arugula", "ingredients": ["Raw Beef", "Parmesan", "Arugula", "Truffle Oil"], "price": 16.0, "calories": 310 },
+              { "id": "ST-C-003", "name": "Burrata Caprese", "description": "Fresh burrata cheese with heirloom tomatoes and pesto", "ingredients": ["Burrata", "Tomatoes", "Basil Pesto", "Balsamic"], "price": 15.0, "calories": 420 }
             ]
           },
           {
             "name": "Hot Starters",
             "items": [
-              {
-                "id": "ST-H-001",
-                "name": "Crispy Calamari",
-                "description": "Golden fried calamari served with aioli",
-                "ingredients": ["Squid", "Flour", "Eggs", "Spices"],
-                "price": 13.5,
-                "calories": 420
-              },
-              {
-                "id": "ST-H-002",
-                "name": "Mozzarella Sticks",
-                "description": "Breaded mozzarella with marinara sauce",
-                "ingredients": ["Mozzarella", "Breadcrumbs", "Eggs"],
-                "price": 10.0,
-                "calories": 450
-              }
+              { "id": "ST-H-001", "name": "Dynamite Shrimp", "description": "Crispy tempura shrimp tossed in spicy mayo sauce", "ingredients": ["Shrimp", "Spicy Mayo", "Scallions"], "price": 14.5, "calories": 480 },
+              { "id": "ST-H-002", "name": "Crispy Calamari", "description": "Golden fried calamari served with tartare sauce", "ingredients": ["Squid", "Flour", "Lemon", "Tartare Sauce"], "price": 13.5, "calories": 420 },
+              { "id": "ST-H-003", "name": "Nachos Supreme", "description": "Tortilla chips topped with melted cheese, jalapeños and salsa", "ingredients": ["Tortilla Chips", "Cheddar", "Jalapeños", "Salsa", "Guacamole"], "price": 12.0, "calories": 650 },
+              { "id": "ST-H-004", "name": "Chicken Wings", "description": "Buffalo style spicy wings with blue cheese dip", "ingredients": ["Chicken Wings", "Hot Sauce", "Blue Cheese"], "price": 11.0, "calories": 550 }
             ]
           }
         ]
       },
-
       {
         "category": "Salads",
         "subcategories": [
           {
-            "name": "Green Salads",
+            "name": "Signature Salads",
             "items": [
-              {
-                "id": "SL-G-001",
-                "name": "Caesar Salad",
-                "description": "Classic Caesar with grilled chicken",
-                "ingredients": ["Romaine Lettuce", "Parmesan", "Croutons", "Caesar Dressing"],
-                "price": 14.0,
-                "calories": 520
-              },
-              {
-                "id": "SL-G-002",
-                "name": "Garden Salad",
-                "description": "Fresh seasonal vegetables with olive oil dressing",
-                "ingredients": ["Lettuce", "Tomatoes", "Cucumber", "Olive Oil"],
-                "price": 11.0,
-                "calories": 210
-              }
+              { "id": "SL-001", "name": "Classic Caesar", "description": "Crisp romaine hearts with parmesan and garlic croutons", "ingredients": ["Romaine Lettuce", "Parmesan", "Croutons", "Caesar Dressing"], "price": 14.0, "calories": 520 },
+              { "id": "SL-002", "name": "Greek Salad", "description": "Cucumbers, tomatoes, olives and feta cheese", "ingredients": ["Cucumber", "Tomato", "Feta Cheese", "Olives", "Oregano"], "price": 13.0, "calories": 350 },
+              { "id": "SL-003", "name": "Quinoa Avocado Bowl", "description": "Nutritious quinoa with avocado, pomegranate and lemon dressing", "ingredients": ["Quinoa", "Avocado", "Pomegranate", "Lemon Vinaigrette"], "price": 15.0, "calories": 410 },
+              { "id": "SL-004", "name": "Asian Steak Salad", "description": "Grilled beef strips on mixed greens with sesame dressing", "ingredients": ["Beef Strips", "Mixed Greens", "Sesame Seeds", "Soy Dressing"], "price": 18.0, "calories": 580 }
             ]
           }
         ]
       },
-
+      {
+        "category": "Asian Fusion",
+        "subcategories": [
+          {
+            "name": "Sushi & Rolls",
+            "items": [
+              { "id": "AS-001", "name": "California Roll", "description": "Crab stick, avocado, cucumber and sesame", "ingredients": ["Rice", "Nori", "Crab", "Avocado"], "price": 12.0, "calories": 350 },
+              { "id": "AS-002", "name": "Spicy Tuna Roll", "description": "Fresh tuna with spicy mayo and cucumber", "ingredients": ["Tuna", "Rice", "Spicy Mayo", "Cucumber"], "price": 14.0, "calories": 380 },
+              { "id": "AS-003", "name": "Salmon Sashimi", "description": "5 slices of premium fresh salmon", "ingredients": ["Salmon", "Wasabi", "Ginger"], "price": 16.0, "calories": 200 }
+            ]
+          },
+          {
+            "name": "Wok & Noodles",
+            "items": [
+              { "id": "AS-W-001", "name": "Pad Thai", "description": "Stir-fried rice noodles with shrimp, peanuts and lime", "ingredients": ["Rice Noodles", "Shrimp", "Peanuts", "Bean Sprouts"], "price": 17.0, "calories": 650 },
+              { "id": "AS-W-002", "name": "Chicken Teriyaki", "description": "Grilled chicken glazed in sweet soy sauce with rice", "ingredients": ["Chicken", "Teriyaki Sauce", "Rice", "Sesame"], "price": 18.0, "calories": 550 }
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Pasta & Risotto",
+        "subcategories": [
+          {
+            "name": "Italian Classics",
+            "items": [
+              { "id": "PR-001", "name": "Truffle Mushroom Risotto", "description": "Creamy arborio rice with wild mushrooms and truffle oil", "ingredients": ["Arborio Rice", "Mushrooms", "Truffle Oil", "Parmesan"], "price": 22.0, "calories": 680 },
+              { "id": "PR-002", "name": "Spaghetti Carbonara", "description": "Authentic Roman style with guanciale, egg yolk and pecorino", "ingredients": ["Spaghetti", "Guanciale", "Eggs", "Pecorino Cheese", "Black Pepper"], "price": 19.0, "calories": 720 },
+              { "id": "PR-003", "name": "Penne Arrabbiata", "description": "Spicy tomato sauce with garlic and parsley", "ingredients": ["Penne", "Tomato Sauce", "Chili Peppers", "Garlic"], "price": 16.0, "calories": 450 },
+              { "id": "PR-004", "name": "Seafood Linguine", "description": "Pasta with shrimp, mussels and calamari in white wine sauce", "ingredients": ["Linguine", "Shrimp", "Mussels", "White Wine", "Garlic"], "price": 26.0, "calories": 620 }
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Pizza & Flatbreads",
+        "subcategories": [
+          {
+            "name": "Wood Fired Pizza",
+            "items": [
+              { "id": "PZ-001", "name": "Margherita", "description": "San Marzano tomato sauce, mozzarella di bufala and basil", "ingredients": ["Tomato Sauce", "Mozzarella", "Basil"], "price": 14.0, "calories": 800 },
+              { "id": "PZ-002", "name": "Pepperoni Feast", "description": "Loaded with double pepperoni and mozzarella", "ingredients": ["Tomato Sauce", "Pepperoni", "Mozzarella"], "price": 16.0, "calories": 950 },
+              { "id": "PZ-003", "name": "BBQ Chicken Pizza", "description": "Grilled chicken, BBQ sauce, red onions and cilantro", "ingredients": ["BBQ Sauce", "Chicken", "Red Onion", "Mozzarella"], "price": 17.0, "calories": 920 },
+              { "id": "PZ-004", "name": "Truffle & Mushroom", "description": "White base pizza with truffle cream and mushrooms", "ingredients": ["Truffle Cream", "Mushrooms", "Mozzarella", "Arugula"], "price": 19.0, "calories": 880 }
+            ]
+          }
+        ]
+      },
       {
         "category": "Main Courses",
         "subcategories": [
           {
-            "name": "Beef Dishes",
+            "name": "Steakhouse",
             "items": [
-              {
-                "id": "MC-B-001",
-                "name": "Grilled Ribeye Steak",
-                "description": "Juicy ribeye grilled to perfection",
-                "ingredients": ["Ribeye Steak", "Butter", "Herbs"],
-                "price": 38.0,
-                "calories": 750
-              },
-              {
-                "id": "MC-B-002",
-                "name": "Beef Stroganoff",
-                "description": "Classic creamy beef stroganoff",
-                "ingredients": ["Beef", "Mushrooms", "Cream", "Onions"],
-                "price": 29.0,
-                "calories": 680
-              }
+              { "id": "MC-S-001", "name": "Ribeye Steak (300g)", "description": "Premium aged ribeye grilled to your liking", "ingredients": ["Ribeye", "Herbed Butter", "Roasted Garlic"], "price": 38.0, "calories": 850 },
+              { "id": "MC-S-002", "name": "Filet Mignon (200g)", "description": "Tender beef tenderloin served with peppercorn sauce", "ingredients": ["Beef Tenderloin", "Peppercorn Sauce", "Asparagus"], "price": 42.0, "calories": 600 },
+              { "id": "MC-S-003", "name": "Lamb Chops", "description": "Grilled marinated lamb chops with mint yogurt", "ingredients": ["Lamb Chops", "Mint", "Yogurt", "Spices"], "price": 34.0, "calories": 780 }
             ]
           },
           {
-            "name": "Chicken Dishes",
+            "name": "Poultry & Seafood",
             "items": [
-              {
-                "id": "MC-C-001",
-                "name": "Grilled Chicken Breast",
-                "description": "Lean grilled chicken with herbs",
-                "ingredients": ["Chicken Breast", "Olive Oil", "Spices"],
-                "price": 22.0,
-                "calories": 420
-              },
-              {
-                "id": "MC-C-002",
-                "name": "Chicken Alfredo Pasta",
-                "description": "Creamy alfredo pasta with chicken",
-                "ingredients": ["Chicken", "Pasta", "Cream", "Parmesan"],
-                "price": 24.0,
-                "calories": 690
-              }
-            ]
-          },
-          {
-            "name": "Seafood",
-            "items": [
-              {
-                "id": "MC-S-001",
-                "name": "Grilled Salmon",
-                "description": "Fresh salmon with lemon butter sauce",
-                "ingredients": ["Salmon", "Butter", "Lemon"],
-                "price": 30.0,
-                "calories": 540
-              },
-              {
-                "id": "MC-S-002",
-                "name": "Shrimp Scampi",
-                "description": "Garlic shrimp sautéed in butter",
-                "ingredients": ["Shrimp", "Garlic", "Butter"],
-                "price": 28.0,
-                "calories": 510
-              }
-            ]
-          },
-          {
-            "name": "Vegetarian & Vegan",
-            "items": [
-              {
-                "id": "MC-V-001",
-                "name": "Vegan Buddha Bowl",
-                "description": "Balanced bowl with grains and vegetables",
-                "ingredients": ["Quinoa", "Chickpeas", "Avocado", "Vegetables"],
-                "price": 20.0,
-                "calories": 460
-              },
-              {
-                "id": "MC-V-002",
-                "name": "Vegetable Lasagna",
-                "description": "Layered pasta with seasonal vegetables",
-                "ingredients": ["Pasta Sheets", "Vegetables", "Tomato Sauce"],
-                "price": 21.0,
-                "calories": 580
-              }
+              { "id": "MC-P-001", "name": "Grilled Salmon", "description": "Atlantic salmon with lemon butter sauce and asparagus", "ingredients": ["Salmon", "Butter", "Lemon", "Asparagus"], "price": 28.0, "calories": 540 },
+              { "id": "MC-P-002", "name": "Parmesan Crusted Chicken", "description": "Chicken breast topped with parmesan crust served with mashed potatoes", "ingredients": ["Chicken Breast", "Parmesan", "Breadcrumbs", "Potatoes"], "price": 24.0, "calories": 680 },
+              { "id": "MC-P-003", "name": "Fish and Chips", "description": "Beer battered cod served with chunky fries and tartare sauce", "ingredients": ["Cod Fish", "Beer Batter", "Potatoes", "Tartare Sauce"], "price": 22.0, "calories": 950 }
             ]
           }
         ]
       },
-
       {
-        "category": "Burgers & Sandwiches",
+        "category": "Burgers & Handhelds",
         "subcategories": [
           {
-            "name": "Burgers",
+            "name": "Gourmet Burgers",
             "items": [
-              {
-                "id": "BG-001",
-                "name": "Classic Beef Burger",
-                "description": "Beef patty with lettuce and tomato",
-                "ingredients": ["Beef Patty", "Burger Bun", "Cheese"],
-                "price": 18.0,
-                "calories": 750
-              },
-              {
-                "id": "BG-002",
-                "name": "Vegan Burger",
-                "description": "Plant-based burger with vegan sauce",
-                "ingredients": ["Vegan Patty", "Whole Wheat Bun", "Lettuce"],
-                "price": 17.0,
-                "calories": 620
-              }
+              { "id": "BG-001", "name": "The Urban Burger", "description": "Double beef patty, cheddar, bacon, caramelized onion", "ingredients": ["Beef Patty", "Bacon", "Cheddar", "Brioche Bun"], "price": 18.0, "calories": 1100 },
+              { "id": "BG-002", "name": "Crispy Chicken Burger", "description": "Fried chicken breast with spicy coleslaw", "ingredients": ["Chicken", "Coleslaw", "Pickles", "Bun"], "price": 16.0, "calories": 900 },
+              { "id": "BG-003", "name": "Beyond Vegan Burger", "description": "Plant-based patty with vegan cheese and avocado", "ingredients": ["Vegan Patty", "Vegan Cheese", "Avocado", "Whole Wheat Bun"], "price": 17.0, "calories": 620 },
+              { "id": "BG-004", "name": "Club Sandwich", "description": "Triple decker with chicken, egg, lettuce and mayo", "ingredients": ["Toast", "Chicken", "Egg", "Tomato", "Mayo"], "price": 15.0, "calories": 700 }
             ]
           }
         ]
       },
-
+      {
+        "category": "Sides & Extras",
+        "subcategories": [
+          {
+            "name": "Sides",
+            "items": [
+              { "id": "SD-001", "name": "Truffle Fries", "description": "Fries with truffle oil and parmesan", "ingredients": ["Potatoes", "Truffle Oil", "Parmesan"], "price": 8.0, "calories": 450 },
+              { "id": "SD-002", "name": "Onion Rings", "description": "Beer battered crispy onion rings", "ingredients": ["Onion", "Batter"], "price": 7.0, "calories": 400 },
+              { "id": "SD-003", "name": "Grilled Vegetables", "description": "Seasonal vegetables with olive oil", "ingredients": ["Zucchini", "Peppers", "Eggplant"], "price": 8.0, "calories": 150 },
+              { "id": "SD-004", "name": "Garlic Bread", "description": "Toasted baguette with garlic butter", "ingredients": ["Bread", "Garlic", "Butter", "Parsley"], "price": 6.0, "calories": 320 }
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Kids Menu",
+        "subcategories": [
+          {
+            "name": "For Little Ones",
+            "items": [
+              { "id": "KD-001", "name": "Mini Cheeseburger", "description": "Small beef burger with fries", "ingredients": ["Beef", "Cheddar", "Bun", "Fries"], "price": 9.0, "calories": 450 },
+              { "id": "KD-002", "name": "Chicken Nuggets", "description": "Homemade chicken nuggets with ketchup", "ingredients": ["Chicken", "Breadcrumbs", "Fries"], "price": 8.0, "calories": 400 },
+              { "id": "KD-003", "name": "Kids Mac & Cheese", "description": "Creamy macaroni pasta with cheddar", "ingredients": ["Macaroni", "Cheddar Cheese", "Cream"], "price": 8.5, "calories": 500 }
+            ]
+          }
+        ]
+      },
       {
         "category": "Desserts",
         "subcategories": [
           {
-            "name": "Cakes",
+            "name": "Sweet Treats",
             "items": [
-              {
-                "id": "DS-C-001",
-                "name": "Chocolate Cake",
-                "description": "Rich dark chocolate cake",
-                "ingredients": ["Chocolate", "Flour", "Eggs", "Butter"],
-                "price": 9.0,
-                "calories": 520
-              },
-              {
-                "id": "DS-C-002",
-                "name": "Red Velvet Cake",
-                "description": "Classic red velvet with cream cheese frosting",
-                "ingredients": ["Flour", "Cocoa", "Cream Cheese"],
-                "price": 9.5,
-                "calories": 540
-              }
+              { "id": "DS-001", "name": "Molten Chocolate Cake", "description": "Warm chocolate cake with a liquid center served with vanilla ice cream", "ingredients": ["Chocolate", "Flour", "Eggs", "Vanilla Ice Cream"], "price": 10.0, "calories": 650 },
+              { "id": "DS-002", "name": "New York Cheesecake", "description": "Classic creamy cheesecake with strawberry compote", "ingredients": ["Cream Cheese", "Graham Cracker", "Strawberry"], "price": 9.0, "calories": 550 },
+              { "id": "DS-003", "name": "Tiramisu", "description": "Traditional Italian coffee-flavored dessert", "ingredients": ["Mascarpone", "Espresso", "Ladyfingers", "Cocoa"], "price": 9.5, "calories": 480 },
+              { "id": "DS-004", "name": "Artisan Ice Cream", "description": "Choice of Vanilla, Chocolate, or Pistachio", "ingredients": ["Milk", "Cream", "Sugar", "Natural Flavors"], "price": 6.0, "calories": 300 },
+              { "id": "DS-005", "name": "Fruit Platter", "description": "Assortment of fresh seasonal fruits", "ingredients": ["Melon", "Berries", "Grapes", "Pineapple"], "price": 12.0, "calories": 150 }
             ]
           }
         ]
       },
-
       {
         "category": "Beverages",
         "subcategories": [
           {
-            "name": "Hot Beverages",
+            "name": "Coffee & Tea",
             "items": [
-              {
-                "id": "BV-H-001",
-                "name": "Espresso",
-                "description": "Strong Italian coffee",
-                "ingredients": ["Coffee Beans", "Water"],
-                "price": 4.0,
-                "calories": 5
-              },
-              {
-                "id": "BV-H-002",
-                "name": "Latte",
-                "description": "Espresso with steamed milk",
-                "ingredients": ["Espresso", "Milk"],
-                "price": 5.5,
-                "calories": 120
-              }
+              { "id": "BV-H-001", "name": "Espresso", "description": "Single shot Italian coffee", "ingredients": ["Coffee Beans"], "price": 3.5, "calories": 5 },
+              { "id": "BV-H-002", "name": "Cappuccino", "description": "Espresso with steamed milk foam", "ingredients": ["Espresso", "Milk"], "price": 4.5, "calories": 120 },
+              { "id": "BV-H-003", "name": "Herbal Tea", "description": "Selection of green, mint, or chamomile tea", "ingredients": ["Tea Leaves", "Water"], "price": 4.0, "calories": 0 }
             ]
           },
           {
-            "name": "Cold Beverages",
+            "name": "Cold Drinks & Smoothies",
             "items": [
-              {
-                "id": "BV-C-001",
-                "name": "Iced Tea",
-                "description": "Refreshing lemon iced tea",
-                "ingredients": ["Tea", "Lemon", "Ice"],
-                "price": 4.5,
-                "calories": 90
-              }
+              { "id": "BV-C-001", "name": "Fresh Orange Juice", "description": "Freshly squeezed oranges", "ingredients": ["Orange"], "price": 6.0, "calories": 110 },
+              { "id": "BV-C-002", "name": "Virgin Mojito", "description": "Refreshing lime and mint drink with soda (No Alcohol)", "ingredients": ["Lime", "Mint", "Soda Water", "Sugar"], "price": 7.0, "calories": 140 },
+              { "id": "BV-C-003", "name": "Berry Smoothie", "description": "Blend of mixed berries, yogurt and honey", "ingredients": ["Berries", "Yogurt", "Honey", "Ice"], "price": 8.0, "calories": 220 },
+              { "id": "BV-C-005", "name": "Oreo Milkshake", "description": "Creamy milkshake with crushed Oreo cookies", "ingredients": ["Milk", "Ice Cream", "Oreo", "Cream"], "price": 9.0, "calories": 550 }
             ]
           }
         ]
